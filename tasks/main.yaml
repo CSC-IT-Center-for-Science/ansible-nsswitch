@@ -1,8 +1,10 @@
 ---
 
-- name: Cteate nsswitch.conf file
+- name: Create nsswitch.conf file
   template:
     src: nsswitch.conf.j2
     dest: "{{ nsswitch_file_location }}"
+    backup: yes
   tags:
     - nsswitch_config
+  when: nsswitch_enabled

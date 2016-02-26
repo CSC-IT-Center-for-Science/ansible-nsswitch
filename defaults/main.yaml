@@ -1,5 +1,7 @@
 ---
 
+# Set nsswitch_enabled to True for the role to make any changes
+nsswitch_enabled: False
 # Default location of the config file
 nsswitch_file_location: /etc/nsswitch.conf
 
