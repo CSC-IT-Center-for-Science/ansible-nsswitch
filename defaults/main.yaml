@@ -13,7 +13,6 @@ nsswitch_aliases:
 # Automount
 nsswitch_automount:
   - files
-  - nisplus
 
 # Bootparams
 nsswitch_bootparams:
@@ -28,11 +27,13 @@ nsswitch_ethers:
 # Group
 nsswitch_group:
   - files
+  - sss
 
 # Hosts
 nsswitch_hosts:
   - files
   - dns
+  - myhostname
 
 # Init groups
 nsswitch_initgroups:
@@ -41,10 +42,12 @@ nsswitch_initgroups:
 # Net groups
 nsswitch_netgroup:
   - nisplus
+  - sss
 
 # Netmasks
 nsswitch_netmasks:
   - files
+  - sss
 
 # Networks
 nsswitch_networks:
@@ -53,6 +56,7 @@ nsswitch_networks:
 # Passwd
 nsswitch_passwd:
   - files
+  - sss
 
 # Protocols
 nsswitch_protocols:
@@ -69,10 +73,12 @@ nsswitch_rpc:
 # Services
 nsswitch_services:
   - files
+  - sss
 
 # Shadow
 nsswitch_shadow:
   - files
+  - sss
 
 # List of all databases
 nsswitch__all:
@@ -82,7 +88,7 @@ nsswitch__all:
   ethers: "{{ nsswitch_ethers }}"
   group: "{{ nsswitch_group }}"
   hosts: "{{ nsswitch_hosts }}"
-  initgroups: "{{ nsswitch_initgroups }}"
+#  initgroups: "{{ nsswitch_initgroups }}"
   netgroup: "{{ nsswitch_netgroup }}"
   netmasks: "{{ nsswitch_netmasks }}"
   networks: "{{ nsswitch_networks }}"
