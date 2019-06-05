@@ -7,4 +7,4 @@
     backup: yes
   tags:
     - nsswitch_config
-  when: nsswitch_enabled
+  when: nsswitch_enabled|bool
